@@ -1,22 +1,23 @@
-![UI for Apache Kafka logo](documentation/images/kafka-ui-logo.png) UI for Apache Kafka&nbsp;
+![Pravega logo](https://pravega.io/wp-content/uploads/2021/04/pravega-io.jpg) UI for Pravega&nbsp;
 ------------------
-#### Versatile, fast and lightweight web UI for managing Apache Kafka® clusters. Built by developers, for developers.
+#### Versatile, fast and lightweight web UI for managing Pravega® clusters. Built by developers, for developers.
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/provectus/kafka-ui/blob/master/LICENSE)
-![UI for Apache Kafka Price Free](documentation/images/free-open-source.svg)
-[![Release version](https://img.shields.io/github/v/release/provectus/kafka-ui)](https://github.com/provectus/kafka-ui/releases)
-[![Chat with us](https://img.shields.io/discord/897805035122077716)](https://discord.gg/4DWzD7pGE5)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/jensjohansen/pravega-ui/blob/master/LICENSE)
+![UI for Pravega Price Free](documentation/images/free-open-source.svg)
 
 ### DISCLAIMER
-<em>UI for Apache Kafka is a free tool built and supported by the open-source community. Curated by Provectus, it will remain free and open-source, without any paid features or subscription plans to be added in the future.
+<em>UI for Pravega is a free tool built and supported by the open-source community. Curated by John Johansen, it will remain free and open-source, without any paid features or subscription plans to be added in the future. This project is a blendiing of the [Ui for Kafka project](https://github.com/provectus/kafka-ui/) 
+and [Pravega's Kafka Adapter](https://github.com/pravega/kafka-adapter) that lets applications written for Kafka to use Pravega Streams instead of Kafka for messages.
+
+### A Plug for our unwitting contributor, Provectus:
 Looking for the help of Kafka experts? Provectus can help you design, build, deploy, and manage Apache Kafka clusters and streaming applications. Discover [Professional Services for Apache Kafka](https://provectus.com/professional-services-apache-kafka/), to unlock the full potential of Kafka in your enterprise! </em>
 
 
-#### UI for Apache Kafka is a free, open-source web UI to monitor and manage Apache Kafka clusters.
+#### UI for Pravega is a free, open-source web UI to monitor and manage Pravega clusters.
 
-UI for Apache Kafka is a simple tool that makes your data flows observable, helps find and troubleshoot issues faster and deliver optimal performance. Its lightweight dashboard makes it easy to track key metrics of your Kafka clusters - Brokers, Topics, Partitions, Production, and Consumption.
+UI for Pravega is a simple tool that makes your data flows observable, helps find and troubleshoot issues faster and deliver optimal performance. Its lightweight dashboard makes it easy to track key metrics of your Kafka-like Pravega clusters - Brokers, Topics, Partitions, Production, and Consumption.
 
-Set up UI for Apache Kafka with just a couple of easy commands to visualize your Kafka data in a comprehensible way. You can run the tool locally or in
+Set up UI for Pravega with just a couple of easy commands to visualize your streamig data in a comprehensible way. You can run the tool locally or in
 the cloud.
 
 ![Interface](documentation/images/Interface.gif)
@@ -24,8 +25,8 @@ the cloud.
 # Features
 * **Multi-Cluster Management** — monitor and manage all your clusters in one place
 * **Performance Monitoring with Metrics Dashboard** —  track key Kafka metrics with a lightweight dashboard
-* **View Kafka Brokers** — view topic and partition assignments, controller status
-* **View Kafka Topics** — view partition count, replication status, and custom configuration
+* **View Brokers** — view topic and partition assignments, controller status
+* **View Topics** — view partition count, replication status, and custom configuration
 * **View Consumer Groups** — view per-partition parked offsets, combined and per-partition lag
 * **Browse Messages** — browse messages with JSON, plain text, and Avro encoding
 * **Dynamic Topic Configuration** — create and configure new topics with dynamic configuration
@@ -35,12 +36,12 @@ the cloud.
 * **Data masking** - [obfuscate](https://github.com/provectus/kafka-ui/blob/master/documentation/guides/DataMasking.md) sensitive data in topic messages
 
 # The Interface
-UI for Apache Kafka wraps major functions of Apache Kafka with an intuitive user interface.
+UI for Pravega wraps major Kafka functions with an intuitive user interface.
 
 ![Interface](documentation/images/Interface.gif)
 
 ## Topics
-UI for Apache Kafka makes it easy for you to create topics in your browser by several clicks,
+UI for APravega makes it easy for you to create topics in your browser by several clicks,
 pasting your own parameters, and viewing topics in the list.
 
 ![Create Topic](documentation/images/Create_topic_kafka-ui.gif)
@@ -51,7 +52,7 @@ connectors, overview topic settings.
 ![Connector_Topic_Consumer](documentation/images/Connector_Topic_Consumer.gif)
 
 ### Messages
-Let's say we want to produce messages for our topic. With the UI for Apache Kafka we can send or write data/messages to the Kafka topics without effort by specifying parameters, and viewing messages in the list.
+Let's say we want to produce messages for our topic. With the UI for Pravega we can send or write data/messages to the  topics without effort by specifying parameters, and viewing messages in the list.
 
 ![Produce Message](documentation/images/Create_message_kafka-ui.gif)
 
@@ -67,7 +68,7 @@ with a few clicks in a user-friendly interface.
 
 # Getting Started
 
-To run UI for Apache Kafka, you can use a pre-built Docker image or build it locally.
+To run UI for Pravega, you can use a pre-built Docker image or build it locally.
 
 ## Configuration
 
@@ -82,7 +83,7 @@ We have plenty of [docker-compose files](documentation/compose/DOCKER_COMPOSE.md
 - [Configure seriliazation/deserialization plugins or code your own](documentation/guides/Serialization.md)
 
 ### Configuration File
-Example of how to configure clusters in the [application-local.yml](https://github.com/provectus/kafka-ui/blob/master/kafka-ui-api/src/main/resources/application-local.yml) configuration file:
+Configure Pravega clusters as Kafka clusters in the [application-local.yml](https://github.com/jensjohansen/kafka-ui/blob/master/kafka-ui-api/src/main/resources/application-local.yml) configuration file:
 
 
 ```sh
@@ -112,10 +113,10 @@ kafka:
 * `metrics.type`: Type of metrics, either JMX or PROMETHEUS. Defaulted to JMX.
 * `readOnly`: enable read only mode
 
-Configure as many clusters as you need by adding their configs below separated with `-`.
+Configure as many clusters as you need by adding their configs below separated with `-`. Note that the UI for Pravega only works with Pravega clusters - you cannot mix Pravega and Kafka clusters in one UI.
 
 ## Running a Docker Image
-The official Docker image for UI for Apache Kafka is hosted here: [hub.docker.com/r/provectuslabs/kafka-ui](https://hub.docker.com/r/provectuslabs/kafka-ui).
+The official Docker image for UI for Pravega is hosted here: [hub.docker.com/r/johnkjohansen/pravega-ui](https://hub.docker.com/r/johnkjohansen/pravega-ui).
 
 Launch Docker container in the background:
 ```sh
@@ -123,7 +124,7 @@ Launch Docker container in the background:
 docker run -p 8080:8080 \
 	-e KAFKA_CLUSTERS_0_NAME=local \
 	-e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092 \
-	-d provectuslabs/kafka-ui:latest
+	-d johnkjohansen/pravega-ui:latest
 
 ```
 Then access the web UI at [http://localhost:8080](http://localhost:8080).
@@ -134,7 +135,7 @@ Further configuration with environment variables - [see environment variables](#
 If you prefer to use `docker-compose` please refer to the [documentation](docker-compose.md).
 
 ### Helm chart
-Helm chart could be found under [charts/kafka-ui](https://github.com/provectus/kafka-ui/tree/master/charts/kafka-ui) directory
+Helm chart could be found under [charts/pravega-ui](https://github.com/jensjohansen/pravega-ui/tree/master/charts/pravega-ui) directory
 
 Quick-start instruction [here](helm_chart.md)
 
